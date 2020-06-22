@@ -25,6 +25,7 @@ void insert_front(LL *, int);
 void insert_back(LL *, int);
 void destroy(LL *);
 void insert_mid(LL *, int);
+void delete_back(LL *list);
 
 //!main
 int main()
@@ -46,6 +47,17 @@ int main()
     insert_mid(list1, 6);
     insert_mid(list1, 3);
     insert_mid(list1, 12);
+
+    delete_back(list1);
+
+    display(list1);
+    delete_back(list1);
+
+    display(list1);
+    delete_back(list1);
+
+    display(list1);
+    delete_back(list1);
 
     display(list1);
 
@@ -70,6 +82,7 @@ void display(LL *list)
         printf("%d ", p->data);
         p = p->link;
     }
+    printf("\n");
 }
 
 node *create_node(int data)
@@ -100,6 +113,8 @@ void insert_back(LL *list, int data)
     }
 
     p->link = temp;
+    p = NULL;
+
     list->non++;
 }
 
@@ -138,15 +153,14 @@ void insert_mid(LL *list, int data)
 
     while (temp->data > p->data && p != NULL)
     {
-
-        printf("HELLO!!!!!!\n");
-
         q = p;
         p = p->link;
     }
 
     q->link = temp;
     temp->link = p;
+    p = NULL;
+    q = NULL;
     list->non++;
 }
 
@@ -162,4 +176,30 @@ void destroy(LL *list)
         p = p->link;
     }
     free(q);
+    p = NULL;
+    q = NULL;
+}
+
+void delete_back(LL *list)
+{
+    if (list->non == 0)
+        return;
+    if (list->non == 1)
+    {
+        free(list->head);
+        list->head = NULL;
+        list->non--;
+        return;
+    }
+    node *p = list->head->link, *q = list->head;
+    while (p->link != NULL)
+    {
+        q = p;
+        p = p->link;
+    }
+    free(p);
+    q->link = NULL;
+    p = NULL;
+    q = NULL;
+    list->non--;
 }
