@@ -25,7 +25,9 @@ void insert_front(LL *, int);
 void insert_back(LL *, int);
 void destroy(LL *);
 void insert_mid(LL *, int);
-void delete_back(LL *list);
+void delete_back(LL *);
+void delete_front(LL *);
+// void delete_key(LL *, int);
 
 //!main
 int main()
@@ -48,17 +50,9 @@ int main()
     insert_mid(list1, 3);
     insert_mid(list1, 12);
 
-    delete_back(list1);
-
     display(list1);
-    delete_back(list1);
 
-    display(list1);
-    delete_back(list1);
-
-    display(list1);
-    delete_back(list1);
-
+    delete_key(list1, 6);
     display(list1);
 
     destroy(list1);
@@ -202,4 +196,22 @@ void delete_back(LL *list)
     p = NULL;
     q = NULL;
     list->non--;
+}
+
+void delete_front(LL *list)
+{
+    if (list->non == 0)
+        return;
+
+    if (list->non == 1)
+    {
+        delete_back(list);
+        return;
+    }
+
+    node *p = list->head;
+    list->head = list->head->link;
+    free(p);
+    list->non--;
+    p->link = NULL;
 }
