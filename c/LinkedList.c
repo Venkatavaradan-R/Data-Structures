@@ -55,6 +55,13 @@ int main()
     delete_key(list1, 6);
     display(list1);
 
+    delete_key(list1, 1);
+
+    display(list1);
+
+    delete_key(list1, 13);
+    display(list1);
+
     destroy(list1);
     free(list1);
 }
@@ -76,7 +83,7 @@ void display(LL *list)
         printf("%d ", p->data);
         p = p->link;
     }
-    printf("\n");
+    printf("\n\n");
 }
 
 node *create_node(int data)
@@ -229,17 +236,26 @@ void delete_key(LL *list, int key)
     }
 
     node *p = list->head->link, *q = list->head;
+
+    if (q->data == key)
+    {
+        delete_front(list);
+        return;
+    }
+
     while (p->data != key && p != NULL)
     {
         q = p;
         p = p->link;
     }
+    printf("HELOOOOOOOOOOO!!!\n");
+
     if (p == NULL)
     {
         printf("key not found in list\n");
         return;
     }
-    q = p->link;
+    q->link = p->link;
     free(p);
     q = NULL;
     p = NULL;
