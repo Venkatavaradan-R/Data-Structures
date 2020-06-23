@@ -27,7 +27,7 @@ void destroy(LL *);
 void insert_mid(LL *, int);
 void delete_back(LL *);
 void delete_front(LL *);
-// void delete_key(LL *, int);
+void delete_key(LL *, int);
 
 //!main
 int main()
@@ -214,4 +214,34 @@ void delete_front(LL *list)
     free(p);
     list->non--;
     p->link = NULL;
+}
+
+void delete_key(LL *list, int key)
+{
+    if (list->non == 0)
+        return;
+    if (list->non == 1)
+    {
+        if (list->head->data == key)
+            delete_back(list);
+        else
+            return;
+    }
+
+    node *p = list->head->link, *q = list->head;
+    while (p->data != key && p != NULL)
+    {
+        q = p;
+        p = p->link;
+    }
+    if (p == NULL)
+    {
+        printf("key not found in list\n");
+        return;
+    }
+    q = p->link;
+    free(p);
+    q = NULL;
+    p = NULL;
+    list->non--;
 }
