@@ -28,6 +28,7 @@ void insert_mid(LL *, int);
 void delete_back(LL *);
 void delete_front(LL *);
 void delete_key(LL *, int);
+void delete_pos(LL *, int);
 
 //!main
 int main()
@@ -260,4 +261,33 @@ void delete_key(LL *list, int key)
     q = NULL;
     p = NULL;
     list->non--;
+}
+
+void delete_pos(LL *list, int pos)
+{
+    if (list->non == 0)
+    {
+        return;
+    }
+
+    node *p = list->head, *q = NULL;
+    int count = 1;
+    while (count != pos && p != NULL)
+    {
+        q = p;
+        p = p->link;
+        count++;
+    }
+
+    if (p == NULL)
+    {
+        printf("pos %d doesnt exist", pos);
+        return;
+    }
+
+    q->link = p->link;
+    free(p);
+    list->non--;
+    q = NULL;
+    p = NULL;
 }
