@@ -53,14 +53,13 @@ int main()
 
     display(list1);
 
-    delete_key(list1, 6);
+    delete_pos(list1, 6);
     display(list1);
 
-    delete_key(list1, 1);
-
+    delete_pos(list1, 1);
     display(list1);
 
-    delete_key(list1, 13);
+    delete_pos(list1, 9);
     display(list1);
 
     destroy(list1);
@@ -267,6 +266,12 @@ void delete_pos(LL *list, int pos)
 {
     if (list->non == 0)
     {
+        return;
+    }
+
+    if (pos == 1)
+    {
+        delete_front(list);
         return;
     }
 
