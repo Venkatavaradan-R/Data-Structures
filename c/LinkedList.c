@@ -29,6 +29,13 @@ void delete_back(LL *);
 void delete_front(LL *);
 void delete_key(LL *, int);
 void delete_pos(LL *, int);
+int search(LL *, int);
+/*
+search
+duplicate
+sort 
+merge (into sorted)
+*/
 
 //!main
 int main()
@@ -53,14 +60,9 @@ int main()
 
     display(list1);
 
-    delete_pos(list1, 6);
-    display(list1);
-
-    delete_pos(list1, 1);
-    display(list1);
-
-    delete_pos(list1, 9);
-    display(list1);
+    printf("found 6 at pos %d\n", search(list1, 6));
+    printf("found 1 at pos %d\n", search(list1, 1));
+    printf("found 13 at pos %d\n", search(list1, 13));
 
     destroy(list1);
     free(list1);
@@ -295,4 +297,32 @@ void delete_pos(LL *list, int pos)
     list->non--;
     q = NULL;
     p = NULL;
+}
+
+int search(LL *list, int info)
+{
+    if (list->non == 0)
+    {
+        return -1;
+    }
+
+    node *p = list->head, *q = NULL;
+    int count = 1;
+    while (p->data != info && p != NULL)
+    {
+        q = p;
+        p = p->link;
+        count++;
+    }
+
+    if (p == NULL)
+    {
+        return -1;
+    }
+
+    else
+        return count;
+
+    p = NULL;
+    q = NULL;
 }
