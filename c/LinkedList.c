@@ -31,7 +31,6 @@ void delete_key(LL *, int);
 void delete_pos(LL *, int);
 int search(LL *, int);
 /*
-search
 duplicate
 sort 
 merge (into sorted)
