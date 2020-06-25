@@ -60,9 +60,9 @@ int main()
 
     display(list1);
 
-    printf("found 6 at pos %d\n", search(list1, 6));
-    printf("found 1 at pos %d\n", search(list1, 1));
-    printf("found 13 at pos %d\n", search(list1, 13));
+    LL *list2 = duplicate(list1);
+
+    display(list2);
 
     destroy(list1);
     free(list1);
@@ -107,9 +107,18 @@ void insert_front(LL *list, int data)
 
 void insert_back(LL *list, int data)
 {
+
     node *temp = create_node(data);
 
     node *p = list->head;
+
+    if (list->non == 0)
+    {
+        list->head = temp;
+        list->non++;
+        return;
+    }
+
     while (p->link != NULL)
     {
         p = p->link;
@@ -335,6 +344,7 @@ LL *duplicate(LL *list)
 
     if (list->non == 0)
         return newlist;
+
     // if (list->non==1)
     // {
     //     insert_back(newlist,list->head->data);
@@ -344,7 +354,9 @@ LL *duplicate(LL *list)
 
     while (p != NULL)
     {
+
         insert_back(newlist, p->data);
+
         p = p->link;
     }
 
