@@ -9,3 +9,7 @@ class test:
 
 x = test(3, 'ananth')
 x.display()
+
+del test.age
+
+x.display()
