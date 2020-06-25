@@ -30,6 +30,7 @@ void delete_front(LL *);
 void delete_key(LL *, int);
 void delete_pos(LL *, int);
 int search(LL *, int);
+LL *duplicate(LL *);
 /*
 duplicate
 sort 
@@ -324,4 +325,29 @@ int search(LL *list, int info)
 
     p = NULL;
     q = NULL;
+}
+
+LL *duplicate(LL *list)
+{
+    LL *newlist = malloc(sizeof(LL));
+    newlist->non = 0;
+    newlist->head = NULL;
+
+    if (list->non == 0)
+        return newlist;
+    // if (list->non==1)
+    // {
+    //     insert_back(newlist,list->head->data);
+    // }
+
+    node *p = list->head;
+
+    while (p != NULL)
+    {
+        insert_back(newlist, p->data);
+        p = p->link;
+    }
+
+    p = NULL;
+    return newlist;
 }
