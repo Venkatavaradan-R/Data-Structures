@@ -32,7 +32,6 @@ void delete_pos(LL *, int);
 int search(LL *, int);
 LL *duplicate(LL *);
 /*
-duplicate
 sort 
 merge (into sorted)
 */
