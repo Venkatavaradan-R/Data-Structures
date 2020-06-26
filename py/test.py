@@ -1,4 +1,4 @@
-class test:
+class testtest:
     def __init__(self, age, name):
         self.age = age
         self.name = name
@@ -7,9 +7,9 @@ class test:
         print(f"the age is {self.age}")
 
 
-x = test(3, 'ananth')
+x = testtest(3, 'ananth')
 x.display()
 
-del test.age
+# del testtest.age
 
 x.display()
