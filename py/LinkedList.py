@@ -23,16 +23,17 @@ class LinkedList:
     def insert_back(self, data):
         temp = node(data)
         p = self.head
-        while p is not None:
+        while p.link is not None:
             p = p.link
         p.link = temp
 
 
 list1 = LinkedList()
-list1.head = node("ananth")
-list1.insert_front("venkat")
-list1.insert_front("raghu")
-list1.insert_front("priya")
-list1.insert_front("ranga")
+list1.head = node(2)
+list1.insert_front(1)
+list1.insert_back(3)
+list1.insert_back(4)
+list1.insert_back(5)
+list1.insert_back(6)
 
 list1.display()
