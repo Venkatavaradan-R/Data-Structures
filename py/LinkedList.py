@@ -1,3 +1,5 @@
+# do edge cases for all
+
 class node:
     def __init__(self, data=None):
         self.data = data
@@ -26,6 +28,9 @@ class LinkedList:
         while p.link is not None:
             p = p.link
         p.link = temp
+
+    # def insert_mid(self, data):
+    #     temp = node(data)
 
 
 list1 = LinkedList()
