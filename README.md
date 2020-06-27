@@ -34,6 +34,6 @@ Task list:
 - [ ] Task2
 - [ ] \(optional)Task3
 
-@Venkatavaradan-R is a boss
+@SrujanDeshpande is a boss
 
 :fire: :shit: :kiss:
