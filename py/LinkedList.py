@@ -35,16 +35,34 @@ class LinkedList:
             p = p.link
         p.link = temp
 
-    # def insert_mid(self, data):
-    #     temp = node(data)
+    def insert_mid(self, data):
+        temp = node(data)
+        if self.head == None:
+            self.insert_back(data)
+            return
+
+        p = self.head
+        q = None
+        while p != None and p.data < data:
+            q = p
+            p = p.link
+
+        if p == None:
+            q.link = temp
+
+        q.link = temp
+        temp.link = p
 
 
 list1 = LinkedList()
-list1.head = None
-# list1.insert_front(1)
+list1.head = node(2)
+list1.insert_front(1)
 list1.insert_back(3)
 list1.insert_back(4)
-list1.insert_back(5)
+# list1.insert_back(5)
 list1.insert_back(6)
+
+list1.insert_mid(0)
+
 
 list1.display()
