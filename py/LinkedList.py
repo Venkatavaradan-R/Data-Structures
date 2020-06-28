@@ -16,6 +16,8 @@ class LinkedList:
         while p is not None:
             print(p.data, end=" ")
             p = p.link
+        if self.head == None:
+            print("Empty!")
 
     def insert_front(self, data):
         temp = node(data)
@@ -24,6 +26,10 @@ class LinkedList:
 
     def insert_back(self, data):
         temp = node(data)
+        if self.head == None:
+            self.insert_front(data)
+            return
+
         p = self.head
         while p.link is not None:
             p = p.link
@@ -34,8 +40,8 @@ class LinkedList:
 
 
 list1 = LinkedList()
-list1.head = node(2)
-list1.insert_front(1)
+list1.head = None
+# list1.insert_front(1)
 list1.insert_back(3)
 list1.insert_back(4)
 list1.insert_back(5)
