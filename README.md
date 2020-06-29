@@ -27,12 +27,13 @@ Nested lists:
 1. abc
    - nest1
      - nest2
+2. xyz
 
 Task list:
 
 - [x] Task1
 - [ ] Task2
-- [ ] \(optional)Task3
+- [ ] (optional)Task3
 
 @Venkavaradan-R is a boss
 
