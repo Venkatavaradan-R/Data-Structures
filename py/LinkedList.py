@@ -41,14 +41,23 @@ class LinkedList:
             self.insert_back(data)
             return
 
+        if self.non == 1:
+            if self.head.data > data:
+                self.insert_front(data)
+                return
+            else:
+                self.insert_back(data)
+            return
+
         p = self.head
-        q = None
+        q = self.head
         while p != None and p.data < data:
             q = p
             p = p.link
 
         if p == None:
             q.link = temp
+            return
 
         q.link = temp
         temp.link = p
@@ -56,11 +65,11 @@ class LinkedList:
 
 list1 = LinkedList()
 list1.head = node(2)
-list1.insert_front(1)
-list1.insert_back(3)
-list1.insert_back(4)
+# list1.insert_front(1)
+# list1.insert_back(3)
+# list1.insert_back(4)
 # list1.insert_back(5)
-list1.insert_back(6)
+# list1.insert_back(6)
 
 list1.insert_mid(0)
 
