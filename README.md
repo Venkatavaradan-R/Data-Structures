@@ -33,7 +33,7 @@ Task list:
 
 - [x] Task1
 - [ ] Task2
-- [ ] (optional)Task3
+- [ ] \(optional)Task3
 
 @Venkavaradan-R is a boss
 
