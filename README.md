@@ -1,6 +1,6 @@
 # Data-Structures
 
-https://img.shields.io/github/license/Venkatavaradan-R/Data-Structures
+[](https://img.shields.io/github/license/Venkatavaradan-R/Data-Structures)
 
 All major data structures, implemented in C++, Java, Python, C.
 
