@@ -1,6 +1,11 @@
 # Data-Structures
 
 ![](https://img.shields.io/github/license/Venkatavaradan-R/Data-Structures)
+![](https://img.shields.io/static/v1?label=Language&message=C&color=lightgrey)
+![](https://img.shields.io/static/v1?label=Language&message=Python&color=informational)
+![](https://img.shields.io/static/v1?label=Language&message=C++&color=ff69b4)
+![](https://img.shields.io/static/v1?label=Language&message=Java&color=red)
+
 
 All major data structures, implemented in C++, Java, Python, C.
 
