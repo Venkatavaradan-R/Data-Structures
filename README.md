@@ -8,7 +8,7 @@
 ![](https://img.shields.io/static/v1?label=Language&message=C++&color=ff69b4)
 ![](https://img.shields.io/static/v1?label=Language&message=Java&color=red)
 
-
+![](https://img.shields.io/github/languages/code-size/Venkatavaradan-R/Data-Structures)
 All major data structures, implemented in C++, Java, Python, C.
 
 This repo contains data structures implemented in the four major languages.
