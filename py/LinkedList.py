@@ -86,6 +86,14 @@ class LinkedList:
         del q
         return
 
+    def delete_front(self):
+        if self.non == 0:
+            return
+        p = self.head
+        self.head = p.link
+        del p
+        self.non = self.non-1
+
 
 list1 = LinkedList()
 list1.head = None
