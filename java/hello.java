@@ -1,12 +1,6 @@
-class hi {
-    public static void main(String[] args) {
-        System.out.println("Hi my nigga");
-        // public hello
-    }
-}
-
 class hello {
-    public static void main(String[] args) {
-        System.out.println("Hello my nigga");
-    }
+  public static void main(String[] args) {
+    int num = 100;
+    System.out.println("cac" + num);
+  }
 }
