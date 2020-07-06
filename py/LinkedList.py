@@ -1,4 +1,3 @@
-# do edge cases for all
 
 class node:
     def __init__(self, data=None):
@@ -69,6 +68,24 @@ class LinkedList:
         temp.link = p
         self.non = self.non + 1
 
+    def destroy(self):
+        if self.non == 0:
+            return
+
+        if self.non == 1:
+            del self.head
+            return
+
+        p = self.head
+        q = None
+
+        while p is not None:
+            del q
+            q = p
+            p = p.link
+        del q
+        return
+
 
 list1 = LinkedList()
 list1.head = None
@@ -77,8 +94,11 @@ list1.insert_back(3)
 list1.insert_back(4)
 list1.insert_back(5)
 list1.insert_back(6)
-
 list1.insert_mid(0)
 
 
 list1.display()
+
+
+list1.destroy()
+del list1
