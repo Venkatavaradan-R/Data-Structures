@@ -23,6 +23,7 @@ class LinkedList:
         temp = node(data)
         temp.link = self.head
         self.head = temp
+        self.non = self.non + 1
 
     def insert_back(self, data):
         temp = node(data)
@@ -34,11 +35,11 @@ class LinkedList:
         while p.link is not None:
             p = p.link
         p.link = temp
+        self.non = self.non + 1
 
     def insert_mid(self, data):
-        temp = node(data)
-        if self.head == None:
-            self.insert_back(data)
+        if self.non == 0:
+            self.insert_front(data)
             return
 
         if self.non == 1:
@@ -47,29 +48,35 @@ class LinkedList:
                 return
             else:
                 self.insert_back(data)
-            return
+                return
 
+        temp = node(data)
         p = self.head
-        q = self.head
+        q = None
         while p != None and p.data < data:
             q = p
             p = p.link
 
         if p == None:
             q.link = temp
+            self.non = self.non + 1
             return
 
+        if q == None:
+            self.insert_front(data)
+            return
         q.link = temp
         temp.link = p
+        self.non = self.non + 1
 
 
 list1 = LinkedList()
-list1.head = node(2)
-# list1.insert_front(1)
-# list1.insert_back(3)
-# list1.insert_back(4)
-# list1.insert_back(5)
-# list1.insert_back(6)
+list1.head = None
+list1.insert_front(1)
+list1.insert_back(3)
+list1.insert_back(4)
+list1.insert_back(5)
+list1.insert_back(6)
 
 list1.insert_mid(0)
 
