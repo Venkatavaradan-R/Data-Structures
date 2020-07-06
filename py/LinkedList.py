@@ -12,6 +12,7 @@ class LinkedList:
 
     def display(self):
         p = self.head
+        print(f"No of elements in the list are:{self.non}")
         while p is not None:
             print(p.data, end=" ")
             p = p.link
