@@ -16,6 +16,7 @@ class LinkedList:
         while p is not None:
             print(p.data, end=" ")
             p = p.link
+        print("")
         if self.head == None:
             print("Empty!")
 
@@ -108,6 +109,8 @@ list1.insert_mid(0)
 
 list1.display()
 
+list1.delete_front()
+list1.display()
 
 list1.destroy()
 del list1
