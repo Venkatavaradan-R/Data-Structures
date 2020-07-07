@@ -1,9 +1,9 @@
 class hello {
   public static void main(String[] args) {
-    int num = 100;
-    System.out.println("cac" + num);
-    int minint = Integer.MAX_VALUE;
-    System.out.println("min int" + minint);
+    double kgval = 94d, poundval;
+    poundval = kgval * 2.204;
+    System.out.println("val in kg:" + kgval);
+    System.out.println("val in pound:" + poundval);
 
   }
 }
