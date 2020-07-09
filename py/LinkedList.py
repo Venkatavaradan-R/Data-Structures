@@ -1,4 +1,6 @@
 
+#  delete key is buggy and need to verify edge for delete pos
+
 class node:
     def __init__(self, data=None):
         self.data = data
@@ -128,13 +130,15 @@ class LinkedList:
         p = self.head
         q = None
 
+        print(p.data)
+
         if p.data == data:
             self.head = p.link
             del p
             self.non = self.non-1
             return
 
-        while p.data is not data and p is not None:
+        while p.data != data and p is not None:
             q = p
             p = p.link
 
