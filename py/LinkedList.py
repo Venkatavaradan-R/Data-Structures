@@ -96,6 +96,24 @@ class LinkedList:
         del p
         self.non = self.non-1
 
+    def delete_back(self):
+        if self.non == 0:
+            return
+
+        if self.non == 1:
+            self.delete_front()
+            return
+        p = self.head
+        q = None
+
+        while p.link is not None:
+            q = p
+            p = p.link
+
+        q.link = None
+        del p
+        self.non = self.non-1
+
 
 list1 = LinkedList()
 list1.head = None
@@ -110,6 +128,9 @@ list1.insert_mid(0)
 list1.display()
 
 list1.delete_front()
+list1.display()
+
+list1.delete_back()
 list1.display()
 
 list1.destroy()
