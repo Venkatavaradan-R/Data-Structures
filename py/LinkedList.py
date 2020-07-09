@@ -145,6 +145,37 @@ class LinkedList:
         del p
         self.non = self.non-1
 
+    def delete_pos(self, pos):
+
+        if self.non == 0:
+            return
+
+        if self.non == 1:
+            if pos == 1:
+                self.delete_front()
+                return
+            else:
+                return
+
+        p = self.head
+        q = None
+
+        if pos == 1:
+            self.delete_front()
+            return
+        count = 1
+        while count is not pos and p is not None:
+            q = p
+            p = p.link
+            count = count+1
+
+        if p == None:
+            return
+
+        q.link = p.link
+        del p
+        self.non = self.non - 1
+
 
 list1 = LinkedList()
 list1.head = None
@@ -165,6 +196,9 @@ list1.delete_back()
 list1.display()
 
 list1.delete_key(1)
+list1.display()
+
+list1.delete_key(2)
 list1.display()
 
 list1.destroy()
