@@ -214,17 +214,9 @@ list1.insert_mid(0)
 
 list1.display()
 
-list1.delete_front()
-list1.display()
+data = 4
 
-list1.delete_back()
-list1.display()
-
-list1.delete_key(1)
-list1.display()
-
-list1.delete_pos(10)
-list1.display()
+print(f"data = {data} can be found at pos {list1.search(data)}")
 
 list1.destroy()
 del list1
