@@ -176,6 +176,31 @@ class LinkedList:
         del p
         self.non = self.non - 1
 
+    def search(self, data):
+        if self.non == 0:
+            return -1
+
+        if self.non == 1:
+            if self.head.data == data:
+                return 1
+            else:
+                return -1
+
+        if self.head.data == data:
+            return 1
+
+        p = self.head
+        count = 1
+
+        while p is not None and p.data != data:
+            p = p.link
+            count = count+1
+
+        if p is None:
+            return -1
+
+        return count
+
 
 list1 = LinkedList()
 list1.head = None
