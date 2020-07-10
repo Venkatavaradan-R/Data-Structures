@@ -127,18 +127,14 @@ class LinkedList:
             else:
                 return
 
+        if self.head.data == data:
+            self.delete_front()
+            return
+
         p = self.head
         q = None
 
-        print(p.data)
-
-        if p.data == data:
-            self.head = p.link
-            del p
-            self.non = self.non-1
-            return
-
-        while p.data != data and p is not None:
+        while p is not None and p.data != data:
             q = p
             p = p.link
 
