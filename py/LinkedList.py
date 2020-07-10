@@ -233,5 +233,12 @@ data = 4
 
 print(f"data = {data} can be found at pos {list1.search(data)}")
 
+list2 = LinkedList()
+
+list1.duplicate(list2)
+
+list2.display()
+
+
 list1.destroy()
 del list1
