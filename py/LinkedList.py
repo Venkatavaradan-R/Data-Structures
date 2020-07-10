@@ -198,7 +198,7 @@ list1.display()
 list1.delete_key(1)
 list1.display()
 
-list1.delete_key(2)
+list1.delete_pos(10)
 list1.display()
 
 list1.destroy()
