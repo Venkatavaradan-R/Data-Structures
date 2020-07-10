@@ -201,6 +201,21 @@ class LinkedList:
 
         return count
 
+    def duplicate(self, newlist):
+        if self.non == 1:
+            return
+
+        if self.non == 1:
+            newlist.head = node(self.head.data)
+            newlist.non = newlist.non+1
+            return
+
+        p = self.head
+
+        while p is not None:
+            newlist.insert_back(p.data)
+            p = p.link
+
 
 list1 = LinkedList()
 list1.head = None
