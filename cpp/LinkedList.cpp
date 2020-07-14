@@ -2,25 +2,40 @@
 
 using namespace std;
 
-struct node
+class node
 {
+public:
     int data;
     struct node *link;
+    node(int x = 0, struct node *y = NULL)
+    {
+        data = x;
+        link = y;
+    }
 };
 
 typedef struct node node;
 
-struct LinkedList
+class LinkedList
 {
+public:
     int non;
     node *head;
+
+    // LinkedList():
 };
+
+// node* create_node(int);
 
 typedef struct LinkedList LL;
 
 int main()
 {
-    LL list1 = new LL;
-    list1->non = 100;
-    cout << list1->non << endl;
+    LL *list1 = new LL;
+    node *n1 = new node(100);
+    node *n2 = new node(NULL, n1);
+    cout << "node1: " << n1->data << "  " << n1->link << endl;
+    cout << "node2: " << n2->data << "  " << n2->link << endl;
+
+    delete list1;
 }
