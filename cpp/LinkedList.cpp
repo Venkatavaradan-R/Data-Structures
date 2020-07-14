@@ -16,6 +16,11 @@ struct LinkedList
     node *head;
 };
 
+typedef struct LinkedList LL;
+
 int main()
 {
+    LL list1 = new LL;
+    list1->non = 100;
+    cout << list1->non << endl;
 }
