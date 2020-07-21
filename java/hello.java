@@ -14,7 +14,7 @@ class hello {
     if (is_gay)
       System.out.println("he is gay? " + is_gay);
 
-    System.out.println("the sum of 1,2 ,3 ,4 ,5 is :" + myadd2(1, 2)+ myadd3(3,4,5));
+    System.out.println("the sum of 1,2 ,3 ,4 ,5 is :" + myadd2(myadd2(1, 2), myadd3(3, 4, 5)));
   }
 
   public static int myadd2(int a, int b) {
