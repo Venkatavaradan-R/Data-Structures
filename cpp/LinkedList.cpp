@@ -21,6 +21,7 @@ class LinkedList
 public:
     int non;
     node *head;
+    LinkedList() : return
 
     // LinkedList():
 };
