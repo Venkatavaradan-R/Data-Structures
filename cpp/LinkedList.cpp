@@ -21,7 +21,11 @@ class LinkedList
 public:
     int non;
     node *head;
-
+    LinkedList()
+    {
+        non = 0;
+        head = NULL;
+    }
     // LinkedList():
 };
 
