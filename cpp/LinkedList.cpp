@@ -1,10 +1,10 @@
 #include <iostream>
 
-void display(LL *);
-node *create_node(int);
-void insert_front(LL *, int);
-void insert_back(LL *, int);
-void destroy(LL *);
+// void display(LL *);
+// node *create_node(int);
+// void insert_front(LL *, int);
+// void insert_back(LL *, int);
+// void destroy(LL *);
 // void insert_mid(LL *, int);
 // void delete_back(LL *);
 // void delete_front(LL *);
