@@ -5,13 +5,13 @@ node *create_node(int);
 void insert_front(LL *, int);
 void insert_back(LL *, int);
 void destroy(LL *);
-void insert_mid(LL *, int);
-void delete_back(LL *);
-void delete_front(LL *);
-void delete_key(LL *, int);
-void delete_pos(LL *, int);
-int search(LL *, int);
-LL *duplicate(LL *);
+// void insert_mid(LL *, int);
+// void delete_back(LL *);
+// void delete_front(LL *);
+// void delete_key(LL *, int);
+// void delete_pos(LL *, int);
+// int search(LL *, int);
+// LL *duplicate(LL *);
 /*
 sort
 merge (into sorted)
