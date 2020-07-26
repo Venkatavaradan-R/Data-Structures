@@ -30,7 +30,7 @@ public:
         link = y;
     }
     // Not needed because of constructor
-    
+
     // node* create_node(int data)
     // {
     //   node *temp = new node;
@@ -47,10 +47,29 @@ class LinkedList
 public:
     int non;
     node *head;
+
     LinkedList()
     {
         non = 0;
         head = NULL;
+    }
+
+    void insert_front(int data)
+    {
+      temp = new node(data);
+
+      if (non == 0)
+      {
+        head = temp;
+        non++;
+        return;
+      }
+
+      // if (non==1)
+      // {
+      //
+      // }
+
     }
 };
 
