@@ -29,6 +29,15 @@ public:
         data = x;
         link = y;
     }
+    // Not needed because of constructor
+    
+    // node* create_node(int data)
+    // {
+    //   node *temp = new node;
+    //   temp->data  = data;
+    //   temp->link = NULL;
+    //   return temp;
+    // }
 };
 
 typedef struct node node;
@@ -43,7 +52,6 @@ public:
         non = 0;
         head = NULL;
     }
-    // LinkedList():
 };
 
 // node* create_node(int);
