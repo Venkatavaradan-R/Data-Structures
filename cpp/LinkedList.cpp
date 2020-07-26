@@ -65,10 +65,16 @@ public:
         return;
       }
 
-      // if (non==1)
-      // {
-      //
-      // }
+      if (non==1)
+      {
+        temp->link = head;
+        head = temp;
+        non++;
+        return;
+      }
+
+      // if 
+
 
     }
 };
