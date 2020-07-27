@@ -191,6 +191,28 @@ public:
     delete p;
     non--;
   }
+
+  void delete_back()
+  {
+    if (non == 0)
+    {
+      return;
+    }
+    if (non == 1)
+    {
+      delete_front();
+      return;
+    }
+
+    node *p = head;
+
+    while (p->link->link != NULL)
+    {
+      p = p->link;
+    }
+    delete p->link;
+    p->link = NULL;
+  }
 };
 
 typedef struct LinkedList LL;
@@ -204,6 +226,7 @@ int main()
   list1->insert_mid(100);
 
   list1->delete_front();
+  list1->delete_back();
 
   list1->display();
 
