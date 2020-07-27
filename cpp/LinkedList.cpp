@@ -155,6 +155,29 @@ public:
     temp->link = p;
     non++;
   }
+
+  void destroy()
+  {
+    if (non == 0)
+    {
+      return;
+    }
+    if (non == 1)
+    {
+      delete head;
+      return;
+    }
+
+    node *p = head, *q = NULL;
+
+    while (p != NULL)
+    {
+      q = p;
+      p = p->link;
+      delete q;
+    }
+    non = 0;
+  }
 };
 
 // node* create_node(int);
@@ -171,5 +194,6 @@ int main()
 
   list1->display();
 
+  list1->destroy();
   delete list1;
 }
