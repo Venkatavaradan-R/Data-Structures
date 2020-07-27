@@ -69,6 +69,7 @@ public:
     if (non == 1)
     {
       cout << head->data << " " << endl;
+      return;
     }
 
     node *p = head, *q = NULL;
@@ -76,6 +77,7 @@ public:
     while (p != NULL)
     {
       cout << p->data << " ";
+      p = p->link;
     }
     cout << endl;
   }
@@ -88,12 +90,14 @@ typedef struct LinkedList LL;
 int main()
 {
   LL *list1 = new LL;
-  node *n1 = new node(100);
-  node *n2 = new node(NULL, n1);
-  cout << "node1: " << n1->data << "  " << n1->link << endl;
-  cout << "node2: " << n2->data << "  " << n2->link << endl;
+  // node *n1 = new node(100);
+  // node *n2 = new node(NULL, n1);
+  // cout << "node1: " << n1->data << "  " << n1->link << endl;
+  // cout << "node2: " << n2->data << "  " << n2->link << endl;
 
   list1->insert_front(10);
+  list1->display();
+  // cout << list1->head->link;
 
   delete list1;
 }
