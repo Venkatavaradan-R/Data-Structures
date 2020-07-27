@@ -64,7 +64,10 @@ public:
   void display()
   {
     if (non == 0)
+    {
+      cout << "Empty!";
       return;
+    }
 
     if (non == 1)
     {
@@ -96,6 +99,9 @@ int main()
   // cout << "node2: " << n2->data << "  " << n2->link << endl;
 
   list1->insert_front(10);
+  list1->insert_front(9);
+  list1->insert_front(8);
+  list1->insert_front(7);
   list1->display();
   // cout << list1->head->link;
 
