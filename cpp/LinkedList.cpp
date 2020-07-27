@@ -63,6 +63,7 @@ public:
   }
   void display()
   {
+    cout << "No of nodes in the list: " << non << endl;
     if (non == 0)
     {
       cout << "Empty!";
@@ -212,6 +213,40 @@ public:
     }
     delete p->link;
     p->link = NULL;
+    non--;
+  }
+
+  void delete_key(int key)
+  {
+    if (non == 0)
+      return;
+
+    if (non == 1 && head->data == key)
+    {
+
+      delete_back();
+      return;
+    }
+    else
+      return;
+
+    if (head->data = key)
+    {
+      delete_front();
+      return;
+    }
+
+    node *q = NULL, *p = head;
+    cout << "hieeeeeeeee" << endl;
+
+    while (p->data != key)
+    {
+      q = p;
+      p = p->link;
+    }
+    q->link = p->link;
+    delete p;
+    non--;
   }
 };
 
@@ -227,7 +262,7 @@ int main()
 
   list1->delete_front();
   list1->delete_back();
-
+  list1->delete_key(4);
   list1->display();
 
   list1->destroy();
