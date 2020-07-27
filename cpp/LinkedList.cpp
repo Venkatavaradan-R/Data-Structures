@@ -111,6 +111,50 @@ public:
     p->link = temp;
     non++;
   }
+
+  void insert_mid(int data)
+  {
+    if (non == 0)
+    {
+      insert_front(data);
+      return;
+    }
+
+    if (non == 1)
+    {
+      if (data > head->data)
+      {
+        insert_back(data);
+        return;
+      }
+      insert_front(data);
+      return;
+    }
+
+    if (head->data > data)
+    {
+      insert_front(data);
+      return;
+    }
+
+    node *temp = new node, *p = head, *q = NULL;
+
+    while (p != NULL && data > p->data)
+    {
+      q = p;
+      p = p->link;
+    }
+
+    if (p == NULL)
+    {
+      insert_back(data);
+      return;
+    }
+
+    q->link = temp;
+    temp->link = p;
+    non++;
+  }
 };
 
 // node* create_node(int);
@@ -120,21 +164,12 @@ typedef struct LinkedList LL;
 int main()
 {
   LL *list1 = new LL;
-  // node *n1 = new node(100);
-  // node *n2 = new node(NULL, n1);
-  // cout << "node1: " << n1->data << "  " << n1->link << endl;
-  // cout << "node2: " << n2->data << "  " << n2->link << endl;
-
-  // list1->insert_front(10);
-  // list1->insert_front(9);
-  // list1->insert_front(8);
-  // list1->insert_front(7);
-  list1->insert_back(7);
-  list1->insert_back(100);
-  list1->insert_back(8);
+  list1->insert_mid(7);
+  list1->insert_mid(4);
+  list1->insert_mid(1);
+  list1->insert_mid(100);
 
   list1->display();
-  // cout << list1->head->link;
 
   delete list1;
 }
