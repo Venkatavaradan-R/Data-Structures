@@ -88,6 +88,7 @@ public:
   {
     if (non == 0)
     {
+      insert_front(data);
       return;
     }
 
@@ -97,6 +98,7 @@ public:
     {
       head->link = temp;
       non++;
+      return;
     }
 
     node *p = head;
@@ -123,10 +125,14 @@ int main()
   // cout << "node1: " << n1->data << "  " << n1->link << endl;
   // cout << "node2: " << n2->data << "  " << n2->link << endl;
 
-  list1->insert_front(10);
-  list1->insert_front(9);
-  list1->insert_front(8);
-  list1->insert_front(7);
+  // list1->insert_front(10);
+  // list1->insert_front(9);
+  // list1->insert_front(8);
+  // list1->insert_front(7);
+  list1->insert_back(7);
+  list1->insert_back(100);
+  list1->insert_back(8);
+
   list1->display();
   // cout << list1->head->link;
 
