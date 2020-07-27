@@ -178,9 +178,20 @@ public:
     }
     non = 0;
   }
-};
 
-// node* create_node(int);
+  void delete_front()
+  {
+    if (non == 0)
+    {
+      return;
+    }
+
+    node *p = head;
+    head = head->link;
+    delete p;
+    non--;
+  }
+};
 
 typedef struct LinkedList LL;
 
@@ -191,6 +202,8 @@ int main()
   list1->insert_mid(4);
   list1->insert_mid(1);
   list1->insert_mid(100);
+
+  list1->delete_front();
 
   list1->display();
 
