@@ -84,6 +84,31 @@ public:
     }
     cout << endl;
   }
+  void insert_back(int data)
+  {
+    if (non == 0)
+    {
+      return;
+    }
+
+    node *temp = new node(data);
+
+    if (non == 1)
+    {
+      head->link = temp;
+      non++;
+    }
+
+    node *p = head;
+
+    while (p->link != NULL)
+    {
+      p = p->link;
+    }
+
+    p->link = temp;
+    non++;
+  }
 };
 
 // node* create_node(int);
